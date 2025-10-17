@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AmrFX | Professional Video Editor</title>
+
+    <!-- Favicon: provide multiple sizes to ensure larger, crisper icon where supported -->
+    <link rel="icon" type="image/png" sizes="64x64" href="img/AmrFX2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/AmrFX2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/AmrFX2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/AmrFX2.png" />
+    <link rel="shortcut icon" href="img/AmrFX2.png" />
+
+    <!-- File CSS -->
+    <meta
+      name="description"
+      content="AmrFX — professional video editor with 3 years of experience in cinematic, sports, and social media edits. Turning ideas into powerful visuals."
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="author" content="AmrFX" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="AmrFX — creative video editor with 3+ years of experience crafting dynamic, high-impact edits for brands, creators, and athletes."
+    />
+    <meta
+      property="og:description"
+      content="AmrFX — professional video editor with 3 years of experience in cinematic, sports, and social media edits. Turning ideas into powerful visuals."
+    />
+    <meta property="og:image" content="img/AmrFX2.png" />
+    <meta property="og:site_name" content="AmrFX" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="AmrFX — creative video editor with 3+ years of experience crafting dynamic, high-impact edits for brands, creators, and athletes."
+    />
+    <meta
+      name="twitter:description"
+      content="AmrFX — professional video editor with 3 years of experience in cinematic, sports, and social media edits. Turning ideas into powerful visuals."
+    />
+    <meta name="twitter:image" content="img/AmrFX2.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AmrFX",
+        "logo": "img/AmrFX2.png",
+        "sameAs": ["https://www.tiktok.com/@amrrfx"]
+      }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Testimonials section overrides for homepage */
+      .testimonials {
+        padding: 120px 0 60px;
+      }
+      .testimonials .top_section {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .testimonials .top_section p {
+        color: var(--p_color);
+        margin-top: 10px;
+      }
+      .reviews-grid {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 22px;
+      }
+      .review-card {
+        background: var(--black_color);
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+        padding: 22px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.2s ease, border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .review-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--main_color);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      }
+      .review-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--main_color);
+        font-weight: 700;
+        border: 1px solid var(--border-color);
+      }
+      .customer-name {
+        color: var(--white_color);
+        font-weight: 600;
+      }
+      .stars {
+        color: #f7b500;
+        margin-bottom: 10px;
+      }
+      .review-text {
+        color: var(--p_color);
+        line-height: 1.7;
+      }
+      @media (max-width: 600px) {
+        .reviews-grid {
+          width: 90%;
+        }
+      }
+
+      /* Floating WhatsApp chat button */
+      .whatsapp-float {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #25d366, #1ebe5d);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        z-index: 1000;
+        opacity: 0.95;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+        animation: wpPulse 3s ease-out infinite;
+      }
+      .whatsapp-float i {
+        font-size: 26px;
+        line-height: 1;
+      }
+      .whatsapp-float:hover {
+        transform: translateY(-2px);
+        opacity: 1;
+        box-shadow: 0 10px 24px rgba(37, 211, 102, 0.5);
+        animation-play-state: paused;
+      }
+      @keyframes wpPulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+        }
+        70% {
+          box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+      @media (max-width: 600px) {
+        .whatsapp-float {
+          width: 50px;
+          height: 50px;
+          right: 16px;
+          bottom: 16px;
+        }
+        .whatsapp-float i {
+          font-size: 24px;
+        }
+      }
+      .scroll-top {
+        position: fixed;
+        right: 22px;
+        bottom: 90px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--main_color);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+      }
+      .scroll-top.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .scroll-top:hover {
+        transform: translateY(-2px);
+        opacity: 1;
+      }
+      .scroll-top i {
+        font-size: 20px;
+        line-height: 1;
+      }
+      @media (max-width: 600px) {
+        .scroll-top {
+          right: 16px;
+          bottom: 76px;
+          width: 44px;
+          height: 44px;
+        }
+        .scroll-top i {
+          font-size: 18px;
+        }
+      }
+
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="bg-lines">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <header>
+      <nav class="container">
+        <a href="index.html" class="logo"
+          ><img src="img/AmrFX2.png" alt="" width="80px"
+        /></a>
+
+        <div class="links" id="links">
+          <span class="close_menu" onclick="Open_colose_Menu()"
+            ><i class="fa-solid fa-xmark"></i
+          ></span>
+
+          <a href="#" class="logo"><img src="img/AmrFX2.png" alt="" /></a>
+          <a class="active" href="index.html">Home</a>
+          <!-- <a href="pages/About.html">About</a> -->
+          <!-- <a href="pages/Instructors.html">Instructors</a> -->
+          <!-- <a href="pages/Courses.html">Courses</a> -->
+          <!-- <a href="pages/Reviews.html">Reviews</a> -->
+          <!-- <a href="pages/Register.html">Registration</a> -->
+        </div>
+<!-- 
+        <div class="icons">
+          <a target="_blank" title="Sign In / Up" href="pages/Login.html"
+            ><i class="fa-solid fa-right-to-bracket"></i
+          ></a>
+
+          <a target="_blank" title="User Profile" href="#"
+            ><i class="fa-jelly fa-regular fa-user"></i
+          ></a>
+          <span class="icon_menu" onclick="Open_colose_Menu()"></span>
+        </div> -->
+               <div class="icons">
+                   <a
+            target="_blank"
+            title="facebook"
+            href="https://www.facebook.com/amrrelnems"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a
+            target="_blank"
+            title="tiktok"
+            href="https://www.tiktok.com/@amrrfx"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a
+            target="_blank"
+            title="instagram"
+            href="https://www.instagram.com/amrrelnems"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+            </div>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="container">
+        <div class="div_Text">
+          <h4>Hello, i'm</h4>
+          <h1><span>Amr Elnems</span></h1>
+          <h2>CEO</h2>
+          <br />
+          <h2>AmrFX</h2>
+          <p>
+           AmrFX — professional video editor with 3 years of experience in cinematic, sports, and social media edits. Turning ideas into powerful visuals.
+          </p>
+
+          <div class="btns">
+            <a href="#contact" class="btn">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="div_img">
+          <img class="person" src="img/Background.png" alt="" />
+          <!-- <img class="bg_img" src="img/bg.png" alt="" /> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- <section class="about">
+      <div class="container">
+        <div class="div_text">
+          <h5>About me</h5>
+
+          <h2><span>I'm a Engineer</span></h2>
+          <h4>I Open This TP Trading That Help People</h4>
+
+          <p>
+            A step into a new era with TP Trading – where knowledge meets
+            innovation 🌐
+          </p>
+
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Owner</li>
+
+            <li><i class="fa-solid fa-check"></i> Founder</li>
+
+            <li><i class="fa-solid fa-check"></i> CEO</li>
+
+            <li><i class="fa-solid fa-check"></i> Instructor Trading</li>
+          </ul>
+
+          <a
+            target="_blank"
+            href="https://www.facebook.com/amr.elnems.31/"
+            class="btn"
+            >Show Social Media</a
+          >
+        </div>
+        <div class="div_img">
+          <img class="person" src="img/1.PNG" alt="" />
+          <img class="bg_img" src="img/bg_img_home.png" alt="" />
+        </div>
+      </div>
+    </section> -->
+
+    <section class="services">
+      <div class="container">
+        <div class="top_section">
+          <h2>Our <span>Services</span></h2>
+        </div>
+
+        <div class="boxs">
+          <div class="box">
+            <i class="fa-solid fa-globe"></i>
+            <h3>Online Courses</h3>
+            <p>
+              Teaching online courses by the most powerful specialists in each
+              specialty with high efficiency and high quality
+            </p>
+            <a href="pages/Courses.html" class="btn">Read More</a>
+          </div>
+
+          <div class="box">
+            <i class="fa-solid fa-certificate"></i>
+            <h3>Experience Certificates</h3>
+            <p>
+              Certificates of experience from the TP help you qualify for the
+              needs of the labor market
+            </p>
+            <a href="img/certificate.png " download class="btn">Read More</a>
+          </div>
+
+          <div class="box">
+            <i class="fa-solid fa-video"></i>
+            <h3>Recorded Lectures</h3>
+            <p>
+              Recorded lectures help you retrieve information at any time after
+              the lecture and after the course ends
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="course">
+      <div class="container">
+        <div class="top_section">
+          <h2>My <span>Portfolio</span></h2>
+        </div>
+
+        <div class="courses-grid">
+          <!-- Course Card 1 -->
+          <article class="course-card">
+            <div class="card-media">
+              <img src="img/tr5.jpg" alt="Editor in Financial Markets" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Editor in Financial Markets</h3>
+              <p class="card-desc">
+As a video editor specializing in financial markets, I create engaging and professional videos that simplify complex financial concepts and trading strategies. I focus on delivering clean cuts, dynamic transitions, motion graphics, and visual storytelling that enhance market analyses, trading education, and financial content. My goal is to make financial videos look sharp, clear, and visually compelling — perfectly suited for social media, YouTube, and professional platforms.</p>
+              <!-- <h3 class="card-title">0 EG</h3> -->  <button class="read-more">Read More</button>
+              <a target="_blank"
+                class="register-btn"
+                href="img/Edit1.mp4"
+                >Show Now</a>
+            </div>
+          </article>
+
+    <!-- Course Card 2 -->
+           <article class="course-card">
+            <div cl
+              ass="card-media">
+              <img src="img/foot.jpeg" alt="Editor in The Football field"/>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Editor in The Football field</h3>
+              <p class="card-desc">
+As a video editor specializing in football content, I create exciting and dynamic videos that capture the energy and emotion of the game. I focus on highlights, match edits, player showcases, and cinematic montages that bring every moment to life. My editing style combines smooth transitions, powerful effects, and a deep sense of timing to make football videos visually engaging and emotionally impactful.</p>
+              <!-- <h3 class="card-title">500 EG</h3> -->  <button class="read-more">Read More</button>
+             <a target="_blank"
+                class="register-btn"
+                href="img/Edit2.mp4"
+                >Show Now</a>
+            </div>
+          </article>
+          <!-- Course Card 3 -->
+          <article class="course-card">
+            <div class="card-media">
+              <img src="img/Education.jpeg" alt="Editor in Educational field" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Editor in Educational field</h3>
+              <p class="card-desc">
+                As a video editor specializing in educational content, I create clear, engaging, and visually appealing videos that make learning easier and more enjoyable. I focus on explaining complex topics through smooth cuts, clean motion graphics, and effective pacing. Whether it’s online courses, tutorials, or informational videos, I bring educational content to life with professional editing that keeps viewers focused and inspired.
+              </p>
+              <button class="read-more">Read More</button>
+              <!-- <h3 class="card-title">1000 EG</h3> -->
+             <a target="_blank"
+                class="register-btn"
+                href="img/Edit3.mp4"
+                >Show Now</a>
+              >
+            </div>
+          </article>
+
+          <!-- Course Card 4 -->
+          <article class="course-card">
+            <div class="card-media">
+              <img src="img/teach.jpeg" alt="Editor in the Teachers Field" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Editor in the Teachers Field</h3>
+              <p class="card-desc">
+As a video editor specializing in teachers’ content, I create professional and engaging videos that help educators present their lessons in a clear and visually appealing way. I focus on editing lectures, tutorials, and classroom materials with smooth transitions, clean visuals, and effective pacing. My goal is to make educational videos more dynamic, understandable, and inspiring for both teachers and students.
+              </p>
+              <button class="read-more">Read More</button>
+              <!-- <h3 class="card-title">1000 EG</h3> -->
+             <a target="_blank"
+                class="register-btn"
+                href="img/Edit4.mp4"
+                >Show Now</a>
+              >
+            </div>
+          </article>
+
+          <!-- Course Card 5 -->
+         <article class="course-card">
+            <div class="card-media">
+              <img src="img/doc.jpeg" alt="Editor in the Doctors Field" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Editor in the Doctors Field</h3>
+              <p class="card-desc">
+As a video editor specializing in medical and healthcare content, I create professional and informative videos that help doctors and medical professionals communicate their knowledge clearly and effectively. I focus on editing educational materials, clinic promos, surgery highlights, and health awareness videos with clean visuals, smooth transitions, and precise timing. My goal is to make medical content look clear, trustworthy, and visually engaging.
+              </p>
+              <button class="read-more">Read More</button>
+              <!-- <h3 class="card-title">1000 EG</h3> -->
+             <a target="_blank"
+                class="register-btn"
+                href="img/Edit5.mp4"
+                >Show Now</a>
+              >
+            </div>
+          </article>
+
+         </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="top_section">
+        <h2>Student <span>Opinions</span></h2>
+        <p>مراجعات حقيقية من الطلاب</p>
+      </div>
+
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div class="review-header">
+            <div class="avatar">A</div>
+            <div>
+              <div class="customer-name">Ahmed M.</div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            محتوى منظم ومباشر. بدأت أفهم حركة السوق بشكل أفضل، والتطبيق العملي
+            كان مفيد جدًا.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-header">
+            <div class="avatar">S</div>
+            <div>
+              <div class="customer-name">Sara K.</div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            شرح بسيط وأمثلة عملية كتير. حسّيت بفرق كبير في قرارات التداول بعد
+            الدورة.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-header">
+            <div class="avatar">M</div>
+            <div>
+              <div class="customer-name">Mostafa H.</div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            أفضل ما في الدورة هو الجانب التطبيقي والمتابعة. استفدت كتير من
+            ملاحظات المدرب.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-header">
+            <div class="avatar">N</div>
+            <div>
+              <div class="customer-name">Nour A.</div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            المنهج واضح ومتماسك. كنت محتاج ترتيب للأفكار وفعلاً لقيته هنا.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-header">
+            <div class="avatar">H</div>
+            <div>
+              <div class="customer-name">Hossam E.</div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            تقييم 4.5 نجوم عن استحقاق. التجربة ممتازة والدعم سريع جدًا.
+          </p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-header">
+            <div class="avatar">R</div>
+            <div>
+              <div class="customer-name">Rania S.</div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">
+            قمت بالتسجيل بعد ترشيح من صديق، وكانت النتيجة أفضل مما توقعت. أنصح
+            به.
+          </p>
+        </article>
+      </div>
+    </section>
+
+     <section class="contact" id="contact">
+        <div class="top_section">
+            <h2>Contact   <span>Us</span></h2>
+        </div>
+
+        <div class="container">
+
+            <div class="soial_contact">
+                <h2>Follow Us</h2>
+                <div class="links">
+                    <a target="_blank" href="mailto:amrrelnems@gmail.com"><i class="fa-solid fa-envelope"></i> amrrelnems@gmail.com</a>
+                    <a target="_blank" href="tel:+201065754853"><i class="fa-solid fa-phone"></i> +2010165754853</a>
+                    <a target="_blank" href="https://www.facebook.com/amrrelnems" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    <a target="_blank" title="tiktok" target="_blank" href="https://www.tiktok.com/@amrrfx"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                    <a target="_blank" href="https://www.instagram.com/amrrelnems"><i class="fa-brands fa-instagram" target="_blank"></i> Instagram</a>
+                </div>
+            </div>
+
+            <form
+            action="https://api.sheetmonkey.io/form/tY22u4Rf8X6hSeT6FcG8Lr"
+            method="post"
+          >
+            <div class="inpts_form">
+              <input type="text" placeholder="Full Name" name="Name" required />
+              <input type="email" placeholder="Email" name="Email" required />
+              <input
+                type="text"
+                placeholder="Mobile Number"
+                name="Phone"
+                minlength="11"
+                maxlength="20"
+                required
+              />
+              <input type="text" placeholder="Age" required minlength="2" maxlength="2" name="Age"/>
+  
+              <textarea
+                name="Message"
+                required
+                rows="10"
+                placeholder="Your Message Here ..."
+              ></textarea>
+             </select>
+            </div>
+            <br />
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+<script>
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+
+  try {
+    const res = await fetch('https://api.sheetmonkey.io/form/tY22u4Rf8X6hSeT6FcG8Lr', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (res.ok) {
+      alert('✅ Message sent successfully!');
+      this.reset();
+    } else {
+      alert('⚠️ Something went wrong while sending.');
+    }
+  } catch (err) {
+    alert('❌ Network error.');
+    console.error(err);
+  }
+});
+</script>
+        </div>
+    </section>
+
+    <footer>
+      <div class="footerContainer">
+        <div class="socialIcons">
+          <a target="_blank" href="https://www.facebook.com/amrrelnems"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a target="_blank" href="https://www.instagram.com/amrrelnems"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a target="_blank" href="https://www.tiktok.com/@amrrfx"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a
+            target="_blank"
+            href="https://api.whatsapp.com/send?phone=201065754853"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          
+        <!-- <div class="footerNav"> -->
+          <!-- <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./pages/About.html">About</a></li>
+            <!-- <li><a href="./pages/Instructors.html">Instructors</a></li> -->
+            <!-- <li><a href="./pages/Courses.html">Courses</a></li> -->
+            <!-- <li><a href="./pages/Reviews.html">Reviews</a></li> -->
+            <!-- <li><a href="./pages/Register.html">Registration</a></li> -->
+          <!-- </ul> --> -->
+        <!-- </div> -->
+      </div>
+      <div class="footerBottom">
+        <p>
+          All Copyrights Reserved &copy;2024 | Designed by
+          <span class="designer">AmrFX</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Chat Button -->
+    <a
+      href="https://api.whatsapp.com/send?phone=201065754853"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <script>
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const onScroll = () => {
+        if (window.scrollY > 200) {
+          scrollTopBtn.classList.add("show");
+        } else {
+          scrollTopBtn.classList.remove("show");
+        }
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      onScroll();
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      (function(){
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced || !window.ScrollReveal) return;
+        const sr = ScrollReveal({
+          distance: '24px',
+          duration: 700,
+          easing: 'cubic-bezier(0.22,0.61,0.36,1)',
+          viewFactor: 0.15,
+          reset: false,
+          mobile: true
+        });
+        sr.reveal('.hero .div_Text > *', { origin: 'bottom', interval: 80 });
+        sr.reveal('.hero .div_img img', { scale: 0.98, delay: 150 });
+        sr.reveal('.services .top_section > *', { origin: 'bottom', interval: 60 });
+        sr.reveal('.services .boxs .box', { origin: 'bottom', interval: 120 });
+        sr.reveal('.projects .top_section > *', { origin: 'bottom', interval: 60 });
+        sr.reveal('.course-card:nth-child(odd)', { origin: 'left', interval: 120 });
+        sr.reveal('.course-card:nth-child(even)', { origin: 'right', interval: 120 });
+        sr.reveal('.testimonials .top_section > *', { origin: 'bottom', interval: 60 });
+        sr.reveal('.review-card', { origin: 'bottom', interval: 80 });
+        sr.reveal('.contact .top_section > *', { origin: 'bottom', interval: 60 });
+        sr.reveal('.soial_contact', { origin: 'left' });
+        sr.reveal('.contact form', { origin: 'right' });
+        sr.reveal('header .links a, header .icons a', { origin: 'top', distance: '12px', duration: 500, interval: 40 });
+        sr.reveal('footer .footerContainer', { origin: 'bottom' });
+      })();
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
